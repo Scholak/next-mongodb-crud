@@ -2,5 +2,5 @@
 
 ## Todo
 - [x] db integration
-- [] ui
-- [] form validations
+- [ ] ui
+- [ ] form validations
