@@ -5,7 +5,7 @@ export async function GET(req: Request) {
   await dbConnect()
   const contacts = await contactModel.find({})
   
-  return new Response(JSON.stringify({ contacts }), { status: 200 })
+  return new Response(JSON.stringify(contacts), { status: 200 })
 }
 
 export async function POST(req: Request) {

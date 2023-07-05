@@ -1,13 +1,5 @@
 import mongoose, { Schema } from 'mongoose'
 
-interface Contact {
-	firstname: string
-	lastname: string
-	email: string
-	phone: string
-	address: string
-}
-
 const ContactSchema = new Schema<Contact>(
 	{
 		firstname: {
