@@ -33,13 +33,15 @@ const ContactList = () => {
 				create new contact
 			</Link>
 			{contactsQuery.isError && (
-				<span className='block my-2 text-red-600'>{contactsQuery.error.message}</span>
+				<span className='block my-2 text-red-600'>
+					{contactsQuery.error.message}
+				</span>
 			)}
 			{contactsQuery.isLoading && (
 				<span className='block my-2 text-sky-600'>Loading...</span>
 			)}
 			{contactsQuery.isSuccess && (
-				<div className='mt-3 grid grid-cols-4 gap-8 whitespace-nowrap'>
+				<div className='mt-3 grid grid-cols-4 gap-8'>
 					{contactsQuery.data.map((contact: Contact) => (
 						<div
 							key={contact._id}
@@ -60,7 +62,26 @@ const ContactList = () => {
 							<p>
 								<strong>Address:</strong> {contact.address}
 							</p>
-							<span onClick={async () => {await mutateAsync(contact._id)}} className='text-red-600 underline underline-offset-2 cursor-pointer'>delete</span>
+							<Link
+								href={`/${contact._id}`}
+								className='text-blue-500 underline underline-offset-2 cursor-pointer'
+							>
+								view
+							</Link>
+							<Link
+								href={`/${contact._id}/edit`}
+								className='mx-2 text-yellow-600 underline underline-offset-2 cursor-pointer'
+							>
+								edit
+							</Link>
+							<span
+								onClick={async () => {
+									await mutateAsync(contact._id)
+								}}
+								className='text-red-600 underline underline-offset-2 cursor-pointer'
+							>
+								delete
+							</span>
 						</div>
 					))}
 				</div>

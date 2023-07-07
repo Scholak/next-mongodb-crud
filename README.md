@@ -2,5 +2,9 @@
 
 ## Todo
 - [x] db integration
-- [ ] ui
-- [ ] form validations
+- [x] ui
+- [x] form validations
+
+## Learning Points
+- react query with typescript
+- mongodb crud

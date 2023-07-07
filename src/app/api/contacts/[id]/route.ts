@@ -13,7 +13,7 @@ export async function GET(req: Request, { params }: Params) {
     const contact = await contactModel.findById(params.id)
 
     if (contact) {
-      return new Response(JSON.stringify({ contact }), { status: 200 })
+      return new Response(JSON.stringify(contact), { status: 200 })
     } else {
       return new Response(JSON.stringify({ message: 'contact not found' }), { status: 400 })
     }

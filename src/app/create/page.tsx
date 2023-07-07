@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from 'react-query'
 import { createContact } from '@/services/contactService'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 const CreateContact = () => {
   const router = useRouter()
@@ -38,6 +39,7 @@ const CreateContact = () => {
   return (
     <div className='m-10'>
       <h1 className='mb-2 text-2xl font-bold'>Create New Contact</h1>
+      <Link href='/' className='text-blue-500 underline underline-offset-2 cursor-pointer'>return to contact list</Link>
       {isError && (
         <span className='text-red-600'>
           {error.message}
